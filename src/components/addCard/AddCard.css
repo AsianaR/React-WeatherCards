@@ -1,0 +1,19 @@
+.add-card {
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  width: 220px;
+  height: 470px;
+  background-color: #cecece;
+  text-align: center;
+}
+
+.add-card button {
+  font-size: 100px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: transparent;
+  color: #edf6ff;
+  display: inline-block;
+}
