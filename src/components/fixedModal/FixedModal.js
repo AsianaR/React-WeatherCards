@@ -1,8 +1,28 @@
-import { Modal} from "react-bootstrap";
-
-import SelectorDb from "../selectorDb/SelectorDb";
+import { Modal, Button} from "react-bootstrap";
+import { useState } from "react";
+import WeatherCard from "../weatherCard/WeatherCard";
 
 const FixedModal = (props) => {
+  const arOptions = ["Choose option","Kiev", "Moscow", "Misnk", "Prague"];
+  const [cardList, setInputList] = useState([]);
+  const [value, setValue] = useState();
+
+  const onAddBtnClick = () => {
+    setInputList(cardList.concat(<WeatherCard propCity={value} />));
+    setDrill(cardList);
+    
+  };
+
+  const setDrill = (cardList) => {
+    props.propsHandler(cardList);
+  console.log(cardList);
+  };
+
+
+  const options = arOptions.map((text, index) => {
+    return <option key={index}>{text}</option>;
+  });
+
   return (
     <Modal
       {...props}
@@ -15,8 +35,20 @@ const FixedModal = (props) => {
           Choose city
         </Modal.Title>
       </Modal.Header>
-
-      <SelectorDb props={props}></SelectorDb>
+    <div>
+      <Modal.Body>
+        <select
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        >
+          {options}
+        </select>
+      </Modal.Body>
+      <Modal.Footer>
+        
+        <Button onClick={onAddBtnClick}>Submit</Button>
+      </Modal.Footer>
+    </div>
     </Modal>
   );
 };
