@@ -9,7 +9,6 @@ function App() {
     <div className="app">
         <WeatherCard propCity={'Kiev'}></WeatherCard>
         <WeatherCard propCity={'Minsk'}></WeatherCard>
-        <WeatherCard propCity={'Rome'}></WeatherCard>
         <AddCard></AddCard>
     </div>
   );

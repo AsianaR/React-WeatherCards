@@ -1,22 +1,39 @@
 import { useState } from "react";
+import { Modal, Button } from "react-bootstrap";
+import WeatherCard from "../weatherCard/WeatherCard";
 import "./SelectorDb.css";
 
-const SelectorDb = () => {
-    const arOptions = ['Kiev', 'Moscow', 'Misnk', 'Prague'];
-   const [value, setValue] = useState('');
+const SelectorDb = (props) => {
+  const arOptions = ["Kiev", "Moscow", "Misnk", "Prague"];
+  const [cardList, setInputList] = useState([]);
+  const [value, setValue] = useState();
 
-   const options = arOptions.map((text, index) => {
-      return <option key={index}>{text}</option>;
-   });
+  const onAddBtnClick = () => {
+    setInputList(cardList.concat(<WeatherCard propCity={value} />));
+    props.OnHide();
+  };
 
-   return <div>
-      <select value={value} onChange={(event) => setValue(event.target.value)}>
-         {options}
-      </select>
-      <p>
-         Выбрана опция: {value}
-      </p>
-   </div>;
-}
+  const options = arOptions.map((text, index) => {
+    return <option key={index}>{text}</option>;
+  });
+
+
+  return (
+    <div>
+      <Modal.Body>
+        <select
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        >
+          {options}
+        </select>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={onAddBtnClick}>Submit</Button>
+        {cardList}
+      </Modal.Footer>
+    </div>
+  );
+};
 
 export default SelectorDb;
