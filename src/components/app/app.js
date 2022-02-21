@@ -8,7 +8,6 @@ function App() {
   return (
     <div className="app">
         <WeatherCard propCity={'Kiev'}></WeatherCard>
-        <WeatherCard propCity={'Minsk'}></WeatherCard>
         <AddCard></AddCard>
     </div>
   );

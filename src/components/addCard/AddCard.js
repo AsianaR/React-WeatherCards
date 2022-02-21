@@ -1,20 +1,22 @@
 import { Button } from "react-bootstrap";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FixedModal from "../fixedModal/FixedModal";
 
 import "./AddCard.css";
+import WeatherCard from "../weatherCard/WeatherCard";
 
 const AddCard = () => {
     const [modalShow, setModalShow] = useState(false);
-    const [cards, setCard] = useState();
+    const [cards, setCards] = useState([]);
 
-    const drillHandler = (cards) => {
-      setCard(cards);
+    const drillHandler = (newCard) => {
+      setCards([...cards, newCard]);
+    
     };
 
   return (
     <>
-    {cards}
+      {cards.map((e, index) => <WeatherCard key={index} propCity={e}/>)}
         <div className="add-card">
       <Button variant="secondary" onClick={() => setModalShow(true)}>
         +
