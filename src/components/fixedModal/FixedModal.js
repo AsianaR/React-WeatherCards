@@ -1,13 +1,12 @@
 import { Modal, Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
-import WeatherCard from "../weatherCard/WeatherCard";
+import { useState } from "react";
 
 const FixedModal = (props) => {
-  const arOptions = ["Choose option", "Kiev", "Moscow", "Misnk", "Prague"];
+  const arOptions = ["Choose option", "Kiev", "Berlin", "London", "Prague"];
   const [value, setValue] = useState();
 
   const onAddBtnClick = () => {
-    //setInputList(cardList.concat());
+
     setDrill(value);
   };
 
@@ -16,8 +15,6 @@ const FixedModal = (props) => {
   };
 
   const setValueWithCheck = (e) => {
-    console.log(e, "e");
-    console.log(value, "val");
     if (e === "Choose option" ) {
       alert("Please choose option");
     } else {
@@ -45,7 +42,6 @@ const FixedModal = (props) => {
       <div>
         <Modal.Body>
           <select
-            // value={value}
             onChange={(event) => setValueWithCheck(event.target.value)}
           >
             {options}

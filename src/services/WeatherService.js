@@ -26,7 +26,8 @@ class WeatherService{
             isDay : data.current.is_day,
             condition : data.current.condition.text,
             windSpeed : data.current.wind_kph,
-            humidity : data.current.humidity
+            humidity : data.current.humidity,
+            month : ((data.location.localtime).split('-'))[1]
         }
 
     }

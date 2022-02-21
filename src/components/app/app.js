@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="app">
-        <WeatherCard propCity={'Kiev'}></WeatherCard>
+        <WeatherCard propCity={'Kiev'}></WeatherCard>  
         <AddCard></AddCard>
     </div>
   );

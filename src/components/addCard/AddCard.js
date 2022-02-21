@@ -1,9 +1,8 @@
 import { Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import FixedModal from "../fixedModal/FixedModal";
-
-import "./AddCard.css";
 import WeatherCard from "../weatherCard/WeatherCard";
+import "./AddCard.css";
 
 const AddCard = () => {
     const [modalShow, setModalShow] = useState(false);

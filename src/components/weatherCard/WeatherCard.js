@@ -6,19 +6,38 @@ import windLogo from '../../images/wind.png';
 
 const WeatherCard = (propCity) => {
   const [data, setData] = useState();
+  const [background, setBackground] = useState();
   useEffect(() => {
     const request = async (propCity) => {
       const data = await weatherService.getData(propCity);
       setData(data);
     };
     request(propCity);
+     
   }, []);
+  
+ useEffect(() => {
+  if(data?.month === '12' || data?.month === '01' || data?.month === '02' ){
+    setBackground('https://static.vecteezy.com/system/resources/previews/004/930/679/non_2x/winter-snowy-mountain-portrait-wallpaper-vector.jpg');}
+  else if(data?.month === '03' || data?.month === '04' || data?.month === '05' ){
+    setBackground('https://static.vecteezy.com/system/resources/previews/002/952/785/non_2x/autumn-season-scenery-free-vector.jpg');}
+  else if(data?.month === '06' || data?.month === '07' || data?.month === '08' ){
+    setBackground('https://i.pinimg.com/originals/9b/54/c9/9b54c9bce6eec81ec222054ed9f4f880.jpg');}
+  else{
+    setBackground('https://llllline.com/images/thumbs/0000001062_spring-landscape-ai-vector_800.jpeg');}
+ });
 
+    
 
+  
+  
 
   return (
     <>
-      <div className="weather-card">
+      
+      <div className="weather-card"  style={{
+          backgroundImage: `url(${background})`
+        }}>
         <div className="topWeather">
         <div className="location">
           <p>{data?.city ?? "City"}, {data?.country ?? "Country"}</p>
