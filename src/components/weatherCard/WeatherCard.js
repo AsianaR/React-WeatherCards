@@ -17,15 +17,16 @@ const WeatherCard = (propCity) => {
   }, []);
   
  useEffect(() => {
-  if(data?.month === '12' || data?.month === '01' || data?.month === '02' ){
+  // if(data?.month === '9' || data?.month === '10' || data?.month === '11' ){
+  //   setBackground('https://llllline.com/images/thumbs/0000001062_spring-landscape-ai-vector_800.jpeg');}
+  // else if(data?.month === '03' || data?.month === '04' || data?.month === '05' ){
+  //   setBackground('https://static.vecteezy.com/system/resources/previews/002/952/785/non_2x/autumn-season-scenery-free-vector.jpg');}
+  // else if(data?.month === '06' || data?.month === '07' || data?.month === '08' ){
+  //   setBackground('https://i.pinimg.com/originals/9b/54/c9/9b54c9bce6eec81ec222054ed9f4f880.jpg');}
+  // else{
     setBackground('https://static.vecteezy.com/system/resources/previews/004/930/679/non_2x/winter-snowy-mountain-portrait-wallpaper-vector.jpg');}
-  else if(data?.month === '03' || data?.month === '04' || data?.month === '05' ){
-    setBackground('https://static.vecteezy.com/system/resources/previews/002/952/785/non_2x/autumn-season-scenery-free-vector.jpg');}
-  else if(data?.month === '06' || data?.month === '07' || data?.month === '08' ){
-    setBackground('https://i.pinimg.com/originals/9b/54/c9/9b54c9bce6eec81ec222054ed9f4f880.jpg');}
-  else{
-    setBackground('https://llllline.com/images/thumbs/0000001062_spring-landscape-ai-vector_800.jpeg');}
- });
+ //}
+ );
 
     
 
